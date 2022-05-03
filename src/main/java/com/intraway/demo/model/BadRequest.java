@@ -1,7 +1,5 @@
 package com.intraway.demo.model;
 
-import java.time.LocalDateTime;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,7 +11,7 @@ import lombok.NoArgsConstructor;
 @Builder
 public class BadRequest {
 	
-	private LocalDateTime timestamp;
+	private Long timestamp;
 	
 	private Integer status;
 	

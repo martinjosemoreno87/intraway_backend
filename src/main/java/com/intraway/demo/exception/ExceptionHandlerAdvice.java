@@ -1,6 +1,6 @@
 package com.intraway.demo.exception;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,8 +18,10 @@ public class ExceptionHandlerAdvice {
 	@ResponseBody
 	public ResponseEntity<BadRequest> handleBadRequesttException(BadRequestException e) {
 		
+		Date now = new Date();
+		
 		BadRequest badRequest = BadRequest.builder()
-			.timestamp(LocalDateTime.now())
+			.timestamp(now.getTime())
 			.status(400)
 			.error("Bad Request")
 			.exception("com.intraway.exceptions.badrequest")
